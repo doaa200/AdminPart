@@ -1,0 +1,38 @@
+
+
+    <table class="table table-light">
+
+    <thead>
+      <tr>
+        <th scope="col">Name</th>
+        <th scope="col">Price</th>
+        <th scope="col">Quantity</th>
+         <th scope="col">Image</th>
+         <th scope="col">Add </th>
+        <th scope="col">Edit </th>
+         <th scope="col">Delete</th>
+
+
+
+      </tr >
+    </thead>
+    <tbody>
+      <tr *ngFor="let product of ProductListOfCategory">
+
+
+
+
+        <td>{{product.name}}</td>
+        <td>{{product.quantity}}</td>
+        <td>{{product.price}}</td>
+        <td><img src="https://localhost:44386/Resources/Images/{{product.image}}" style="width:100px;">
+        </td>
+
+        <td><button routerLink="/Product/AddProduct" class="btn btn-success">ADD</button></td>
+        <td><button routerLink="/Product/AddProduct/{{product.id}}" (click)="EditProduct(product)" class="btn btn-success">Edit</button></td>
+        <td><button (click)="DeleteProduct(product.id)" class="btn btn-success"> Delete </button></td>
+
+
+      </tr>
+    </tbody>
+  </table>

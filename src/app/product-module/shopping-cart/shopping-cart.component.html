@@ -1,0 +1,21 @@
+
+
+
+
+  <div class="mb-3">
+    <h1 style="text-align: center;">Choose Your Car</h1>
+    <select class="form-control" name="" id="CatCel" [(ngModel)]="SelectedCategoryID">
+      <option value="0">SelectedCategory</option>
+      <option *ngFor="let category of CategoryList" [value]="category.id">{{category.name}}</option>
+
+    </select>
+  </div>
+  <br>
+  <div class="bg-Warming">
+  <app-products [ReciveCatId] ="SelectedCategoryID"
+
+       (BuyDone)="AddToCart($event)"></app-products>
+</div>
+
+<br>
+
